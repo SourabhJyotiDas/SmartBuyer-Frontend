@@ -57,8 +57,7 @@ Please adhere to this project's `code of conduct`.
 ## Demo
 
 
-
-https://dull-blue-goat-hat.cyclic.app 🤞
+https://smartbuyer.vercel.app 🤞
 ## For Production Build
 
 To build this project run ( Remember only in client folder )
