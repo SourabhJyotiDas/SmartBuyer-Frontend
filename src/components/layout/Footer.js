@@ -23,7 +23,7 @@ export default function Footer() {
                         </div>
                         <div className='right list-none'>
                               <div className='cursor-pointer  primaryText'>Lets Connect</div>
-                              <li><a href="">Instagram</a></li>
+                              <li>Instagram</li>
                               <li>Youtube</li>
                               <li>Twitter</li>
                               <li>LinkedIn</li>
