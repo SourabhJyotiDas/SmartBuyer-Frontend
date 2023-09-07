@@ -14,9 +14,6 @@ import RateReviewIcon from "@material-ui/icons/RateReview";
 const Sidebar = () => {
    return (
       <div className="sidebar">
-         <Link to="/">
-            <h1>Mod</h1>
-         </Link>
          <Link to="/admin/dashboard">
             <p>
                <DashboardIcon /> Dashboard
