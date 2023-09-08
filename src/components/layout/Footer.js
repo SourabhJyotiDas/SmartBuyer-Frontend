@@ -5,12 +5,12 @@ import { GrAppleAppStore } from "react-icons/gr"
 export default function Footer() {
       return (
             <>
-                  <footer className='flex flex-col md:flex-row md:items-center md:justify-around  space-y-5 md:space-y-0 bg-purple-900 text-white py-5 px-5 text-xs '>
+                  <footer className='flex flex-col md:flex-row md:items-center md:justify-around  space-y-5 md:space-y-0 bg-blue-500 text-white py-5 px-5 text-xs '>
                         <div className='space-y-2 '>
                               <h4 className='capitalize primaryText'>Download our app</h4>
                               <p>Download app for  Android and Mobile Phones</p>
-                              <button className='py-2 px-3 rounded-md bg-blue-400 text-white'> <AiFillAndroid className='text-xs' /></button>
-                              <button className='py-2 px-3 rounded-md mx-5 bg-blue-400 text-white'><GrAppleAppStore className='text-xs' /></button>
+                              <button className='py-2 px-3 rounded-md bg-white text-black '> <AiFillAndroid className='text-xs' /></button>
+                              <button className='py-2 px-3 rounded-md mx-5 bg-white text-black'><GrAppleAppStore className='text-xs' /></button>
 
                         </div>
                         <div className=' space-y-1 md:space-y-2'>
