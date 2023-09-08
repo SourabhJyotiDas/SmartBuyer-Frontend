@@ -2,14 +2,12 @@ import React from "react";
 import "./CartItemCard.css";
 import { Link } from "react-router-dom";
 
-const CartItemCard = ({ item, deleteCartItems }) => {
+const CartItemCard = ({ item}) => {
    return (
-      <div className="CartItemCard">
-         <img src={item.image} alt="ssa" />
-         <div>
+      <div className=" flex items-center space-x-3 md:space-x-5 primaryText">
+         <img className="h-[80px] md:h-[20vh] md:rounded-md" src={item.image} alt="img" />
+         <div className="flex flex-col space-y-5">
             <Link to={`/product/${item.product}`}>{item.name}</Link>
-            <span>{`Price: ₹${item.price}`}</span>
-            <p onClick={() => deleteCartItems(item.product)}>Remove</p>
          </div>
       </div>
    );
