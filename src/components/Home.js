@@ -12,15 +12,14 @@ export default function Home() {
 
 
       const dispatch = useDispatch()
-      const { loading, error, products} = useSelector(state => state.products)
+      const { loading, error, products } = useSelector(state => state.products)
 
       // console.log(products)
 
       useEffect(() => {
+            window.scroll(0, 0)
             if (error) {
-                  // return alert.error(error)
                   dispatch(clearErrors)
-                  // console.log(error)
             }
             dispatch(getAllproduct())
             // eslint-disable-next-line
@@ -33,10 +32,10 @@ export default function Home() {
                   {
                         loading ? <Loader /> : <div>
                               <Metadata title={"SmartBuyer - Homepage"} />
-                              <div className="h-[100vh] bg-gradient-to-b from-purple-900 to-white flex flex-col justify-center items-center space-y-7" data-aos="zoom-out-down" data-aos-duration="600" data-aos-once="true">
-                                    <h4 className='text-center text-gray-200 tracking-widest'> Welcome to <div className='primaryText text-xs'>SmartBuyer</div> </h4>
-                                    <h1 className='text-center uppercase font-bold text-2xl text-gray-200 leading-loose tracking-widest'>Find Amazing products below</h1>
-                                    <a href="#homepage"> <button className='flex items-center bg-white border border-white py-2 px-5 rounded-lg  primaryFont tracking-widest hover:bg-transparent hover:text-white hover:ease-in-out duration-300'> Scrool <TfiMouseAlt /> </button></a>
+                              <div className="h-[100vh] bg-gradient-to-b from-blue-500 to-white flex flex-col justify-center items-center space-y-7" data-aos="zoom-out-down" data-aos-duration="600" data-aos-once="true">
+                                    <h4 className='text-center tracking-widest'> Welcome to <div className='primaryText text-xs'>SmartBuyer</div> </h4>
+                                    <h1 className='text-center uppercase font-bold text-2xl  leading-loose tracking-widest'>Find Amazing products below</h1>
+                                    <a href="#homepage"> <button className='flex items-center bg-white border-2 border-gray-400 py-2 px-5 rounded-lg  primaryFont tracking-widest hover:bg-transparent hover:text-white hover:ease-in-out duration-300'> Scrool <TfiMouseAlt /> </button></a>
                               </div>
 
                               <div id='homepage' className=" py-5 px-1">

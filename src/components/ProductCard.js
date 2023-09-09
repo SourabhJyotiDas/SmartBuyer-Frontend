@@ -17,13 +17,13 @@ export default function Product({ product }) {
                               <div className="flex flex-col">
                                     <img className="h-auto" src={product.images[0].url} alt="content" />
                                     <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">{product.category}</h3>
-                                    <h2 className="text-lg font-bold  ">{product.name}</h2>
-                                    <p className="leading-relaxed text-base">{`${product.description.slice(0,55)}...`}</p>
-                                    <div>
-                                          <Rating {...options} /><span className=' tracking-widest'>{product.numOfReviews
-                                          } reviews</span>
+                                    <h2 className="font-bold  ">{product.name}</h2>
+                                    <p className="leading-relaxed text-sm">{`${product.description.slice(0,55)}...`}</p>
+                                    <div className='flex items-center '>
+                                          <Rating {...options} />/<span className=' tracking-widest'>{product.numOfReviews
+                                          } </span>
                                     </div>
-                                    <h2 className="text-lg  font-medium title-font ">{`₹ ${product.price}`}</h2>
+                                    <h2 className="text-lg  font-semibold title-font text-green-500">{`${product.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}`}</h2>
                               </div>
                         </div>
                   </Link>

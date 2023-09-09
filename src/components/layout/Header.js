@@ -1,12 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { BiLogIn } from "react-icons/bi";
 import { CgMenuMotion } from "react-icons/cg";
 import { AiOutlineAppstoreAdd, AiOutlineClose, AiOutlineHome, AiOutlineMessage, AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
+import { useLocation } from "react-router-dom"
 
 
 
 export default function Header() {
+
+      const location = useLocation();
+
       const toggleMenu = () => {
             document.getElementById("mobileMenu").classList.toggle("hidden")
             document.getElementById("mobileMenuClose").classList.toggle("hidden")
@@ -15,7 +19,7 @@ export default function Header() {
 
       return (
             <>
-                  <header className='sticky top-0 z-10'>
+                  <header className='sticky top-0 z-10 '>
                         <nav className='flex items-center p-3 space-x-3 md:px-10 bg-blue-500 '>
                               <CgMenuMotion id='mobileMenu' className='text-2xl md:hidden' onClick={toggleMenu} />
                               <AiOutlineClose id='mobileMenuClose' className='text-xl hidden' onClick={toggleMenu} />
@@ -29,14 +33,14 @@ export default function Header() {
 
 
                               <div className='list-none space-x-4 hidden md:block'>
-                                    <Link className='cursor-pointer' to={"/"}>Home</Link>
-                                    <Link className='cursor-pointer' to={"/products"}>Products</Link>
-                                    <Link className='cursor-pointer' to={"/contact"}>Contact</Link>
-                                    <Link className='cursor-pointer' to={"/cart"}>Cart</Link>
+                                    <Link className={`${location.pathname === "/" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/"}>Home</Link>
+                                    <Link className={`${location.pathname === "/products" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/products"}>Products</Link>
+                                    <Link className={`${location.pathname === "/contact" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/contact"}>Contact</Link>
+                                    <Link className={`${location.pathname === "/cart" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/cart"}>Cart</Link>
                               </div>
                               <div className=' items-center space-x-4 hidden  md:flex'>
-                                    <Link className='cursor-pointer' to={"/search"}>Search</Link>
-                                    <Link className='cursor-pointer text-2xl' to={"/login"}><BiLogIn /></Link>
+                                    <Link className={`${location.pathname === "/search" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/search"}>Search</Link>
+                                    <Link className={`${location.pathname === "/login" ? "text-white cursor-pointer text-2xl" : "cursor-pointer text-2xl"}`} to={"/login"}><BiLogIn /></Link>
                               </div>
                         </nav>
                         <div id='mobileList' className='hidden'>
@@ -70,7 +74,7 @@ export default function Header() {
                               </div>
                         </div>
 
-                  </header>
+                  </header >
             </>
       )
 }
