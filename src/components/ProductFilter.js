@@ -3,6 +3,7 @@ import Slider from "@material-ui/core/Slider"
 import { useNavigate } from 'react-router-dom';
 import { Rating } from "@material-ui/lab";
 import { VscEyeClosed } from "react-icons/vsc"
+import { BiArrowBack } from 'react-icons/bi';
 
 
 
@@ -42,8 +43,8 @@ export default function ProductFilter({ toggleFilter, priceHandler, price, setCa
    // };
 
    return (
-      <div className='w-[100%] md:w-[30vw] h-[100vh]  px-5 sticky top-5 flex flex-col items-center justify-around'>
-         <div className='text-2xl md:hidden' onClick={toggleFilter}><VscEyeClosed /></div>
+      <div className='w-[100vw] md:w-[30vw] h-[100vh]  px-5 sticky top-5 flex flex-col items-center justify-around'>
+         <div className='text-2xl md:hidden w-full' onClick={toggleFilter}><BiArrowBack /></div>
          <div>
 
             <form action="" onSubmit={searchSubmitHandler}>

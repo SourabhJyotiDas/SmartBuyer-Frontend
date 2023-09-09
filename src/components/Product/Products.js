@@ -8,6 +8,8 @@ import { useParams } from 'react-router-dom';
 import Pagination from "react-js-pagination";
 import Metadata from '../layout/Metadata.js';
 import { FiFilter } from "react-icons/fi"
+import { BsSortDown } from "react-icons/bs"
+import { RiEqualizerLine } from 'react-icons/ri';
 
 
 
@@ -37,12 +39,13 @@ export default function Products() {
 
    let count = filterProductsCount
 
-   const toggleFilter=()=>{
+   const toggleFilter = () => {
       document.getElementById("filter").classList.toggle("hidden")
       document.getElementById("filterClose").classList.toggle("hidden")
    }
 
    useEffect(() => {
+      window.scrollTo(0, 0)
       if (error) {
          // return alert.error(error)
          dispatch(clearErrors)
@@ -61,8 +64,18 @@ export default function Products() {
 
                {/* ///////////////////////////////////////////////////////////////////////////// */}
 
-               <div className='w-[100vw] h-[10vh]  rounded-full flex justify-start items-start sticky top-16 md:hidden'>
-                  <FiFilter onClick={toggleFilter} className="text-2xl  " />
+               <div className='w-[100vw] h-[8vh]  rounded-sm flex items-center justify-around  bg-white z-20 fixed bottom-0 md:hidden text-gray-500 
+border-2 border-gray-300'>
+                  <button onClick={toggleFilter} className='flex items-center  py-1 px-5 '>
+                     <RiEqualizerLine  className="text-xl  " />
+                     <span className='font-semibold leading-loose'>Filter</span>
+                  </button>
+                  {/* <div className='text-2xl'>|</div> */}
+                  {/* <button className='flex items-center  py-1 px-5'>
+                     <BsSortDown className="text-xl  " />
+                     <span className=''>Sort</span>
+                  </button> */}
+
                </div>
 
                <div id='filter' className='h-[100vh] bg-white hidden fixed top-10 z-10'>
