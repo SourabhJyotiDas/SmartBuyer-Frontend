@@ -7,8 +7,6 @@ import ProductFilter from "../ProductFilter.js";
 import { useParams } from 'react-router-dom';
 import Pagination from "react-js-pagination";
 import Metadata from '../layout/Metadata.js';
-import { FiFilter } from "react-icons/fi"
-import { BsSortDown } from "react-icons/bs"
 import { RiEqualizerLine } from 'react-icons/ri';
 
 
@@ -36,8 +34,6 @@ export default function Products() {
    const priceHandler = (newPrice) => {
       setPrice(newPrice)
    }
-
-   let count = filterProductsCount
 
    const toggleFilter = () => {
       document.getElementById("filter").classList.toggle("hidden")

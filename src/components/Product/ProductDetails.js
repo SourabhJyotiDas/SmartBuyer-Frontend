@@ -49,7 +49,7 @@ export default function ProductDetails() {
 
       let verified = purchaseIds && purchaseIds.filter((ele) => String(ele) === product._id)
 
-      const isVarified = String(verified) !== product._id;
+      const isVarified = String(verified) === product._id;
 
       // Add More Statics to Review section // Complete
 
