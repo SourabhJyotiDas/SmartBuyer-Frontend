@@ -23,12 +23,10 @@ export default function Product({ product }) {
                                           <Rating {...options} />/<span className=' tracking-widest'>{product.numOfReviews
                                           } </span>
                                     </div>
-                                    <h2 className="text-lg  font-semibold title-font text-green-500">{`${product.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}`}</h2>
+                                    <h2 className="text-sm font-semibold title-font text-green-500">{`${product.price.toLocaleString('en-IN', { style: 'currency', currency: 'INR' })}`}</h2>
                               </div>
                         </div>
                   </Link>
-
-
             </>
       )
 }

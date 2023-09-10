@@ -41,7 +41,7 @@ export default function Products() {
 
    const toggleFilter = () => {
       document.getElementById("filter").classList.toggle("hidden")
-      document.getElementById("filterClose").classList.toggle("hidden")
+      document.getElementById("allProducts").classList.toggle("hidden")
    }
 
    useEffect(() => {
@@ -64,10 +64,10 @@ export default function Products() {
 
                {/* ///////////////////////////////////////////////////////////////////////////// */}
 
-               <div className='w-[100vw] h-[8vh]  rounded-sm flex items-center justify-around  bg-white z-20 fixed bottom-0 md:hidden text-gray-500 
+               <div className='w-[100vw] h-[8vh]  rounded-sm flex items-center justify-around  bg-white z-20 fixed bottom-0 md:hidden text-gray-500  
 border-2 border-gray-300'>
                   <button onClick={toggleFilter} className='flex items-center  py-1 px-5 '>
-                     <RiEqualizerLine  className="text-xl  " />
+                     <RiEqualizerLine className="text-xl  " />
                      <span className='font-semibold leading-loose'>Filter</span>
                   </button>
                   {/* <div className='text-2xl'>|</div> */}
@@ -78,44 +78,49 @@ border-2 border-gray-300'>
 
                </div>
 
-               <div id='filter' className='h-[100vh] bg-white hidden fixed top-10 z-10'>
+               {/* For mobile Devices */}
+               <div id='filter' className=' hidden z-10 bg-white pb-10 h-full absolute '>
                   <ProductFilter toggleFilter={toggleFilter} category={category} setCategory={setCategory} priceHandler={priceHandler} ratings={ratings} setRatings={setRatings} />
                </div>
-               <div className='flex'>
-                  <div className='w-[30vw] hidden md:block'>
-                     <ProductFilter category={category} setCategory={setCategory} priceHandler={priceHandler} ratings={ratings} setRatings={setRatings} />
-                  </div>
-                  <section className=" flex flex-col w-[100%]">
-                     <div className='flex flex-wrap justify-center'>
-                        {
-                           products && products.map((element, index) => (
-                              <ProductCard product={element} key={index} />
-                           ))
-                        }
+
+               {/* For Pc */}
+                <div id='allProducts' className=''>
+                <div className='flex'>
+                     <div className='w-[30%] h-full hidden md:block sticky top-10 bottom-0 py-10 bg-white'>
+                        <ProductFilter category={category} setCategory={setCategory} priceHandler={priceHandler} ratings={ratings} setRatings={setRatings} />
                      </div>
-                     {
-                        (
-                           <div className='text-purple-900 my-3 flex justify-center'>
-                              <Pagination
-                                 activePage={currentPage}
-                                 itemsCountPerPage={resultPerPage}
-                                 totalItemsCount={productCount}
-                                 onChange={setCurrentPageNo}
-                                 nextPageText="Next"
-                                 prevPageText="Prev"
-                                 firstPageText="First page"
-                                 lastPageText="Last page"
-                                 itemClass='page-item'
-                                 linkClass='page-link'
-                                 activeClass='pageItemActive'
-                                 activeLinkClass='pageLinkActive'
-                              >
-                              </Pagination>
-                           </div>
-                        )
-                     }
-                  </section>
-               </div>
+                     <section className="flex flex-col w-[100%]">
+                        <div className='flex flex-wrap justify-center'>
+                           {
+                              products && products.map((element, index) => (
+                                 <ProductCard product={element} key={index} />
+                              ))
+                           }
+                        </div>
+                        {
+                           (
+                              <div className='text-purple-900 my-3 flex justify-center'>
+                                 <Pagination
+                                    activePage={currentPage}
+                                    itemsCountPerPage={resultPerPage}
+                                    totalItemsCount={productCount}
+                                    onChange={setCurrentPageNo}
+                                    nextPageText="Next"
+                                    prevPageText="Prev"
+                                    firstPageText="First page"
+                                    lastPageText="Last page"
+                                    itemClass='page-item'
+                                    linkClass='page-link'
+                                    activeClass='pageItemActive'
+                                    activeLinkClass='pageLinkActive'
+                                 >
+                                 </Pagination>
+                              </div>
+                           )
+                        }
+                     </section>
+                  </div>
+                </div>
 
 
             </div>

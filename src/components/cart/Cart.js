@@ -39,7 +39,7 @@ const Cart = () => {
 
    return (
       <Fragment>
-         {cartItems.length === 0 ? (<div className="flex flex-col items-center justify-center my-10">
+         {cartItems.length === 0 ? (<div className="flex flex-col items-center justify-center my-10 md:min-h-[80vh]">
             <CgShoppingCart className="text-8xl text-gray-200" />
 
             <p className="py-7 text-xl font-semibold">Your cart is empty!</p>
@@ -47,9 +47,9 @@ const Cart = () => {
 
          </div>
          ) : (
-            <div className=" md:flex  md:items-start">
+            <div className=" md:flex  md:items-start md:min-h-[80vh]">
                <div>
-                  <p className="font-bold py-3 border-b-2 border-blue-500 top-1 sticky p-3 text-blue-500">SmartBuyer( {cartItems.length} )</p>
+                  <p className="font-bold py-3 border-b-2 border-blue-500 top-10 bg-white sticky p-3 text-blue-500">SmartBuyer( {cartItems.length} )</p>
 
                   {cartItems && cartItems.map((item) => (
                      <div className=" text-xs md:text-sm p-3 md:w-[60%] mx-auto border-2 border-gray-100 md:my-3" key={item.product}>
