@@ -33,7 +33,9 @@ export default function Profile() {
                   <div>
                      <h1 className='text-center'>My Profile</h1>
                      <img src={user.avatar.url} alt={user.name} />
+                     <button className='bg-blue-500 py-1 px-5 text-white my-5'>
                      <Link to="/account/update">Edit Profile</Link>
+                     </button>
                   </div>
                   <div>
                      <div>

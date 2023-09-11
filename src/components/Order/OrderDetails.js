@@ -1,28 +1,25 @@
 import React, { Fragment, useEffect } from "react";
-import "./orderDetails.css";
 import { useSelector, useDispatch } from "react-redux";
 import MetaData from "../layout/Metadata";
-import { Link,useParams } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import { Link, useParams } from "react-router-dom";
 import { getOrderDetails, clearErrors } from "../../actions/orderAction";
 import Loader from "../layout/Loader";
-// import { useAlert } from "react-alert";
 
 const OrderDetails = () => {
-   const  params = useParams()
+  const params = useParams()
   const { order, error, loading } = useSelector((state) => state.orderDetails);
 
   const dispatch = useDispatch();
-//   const alert = useAlert();
+
+  console.log(order);
 
   useEffect(() => {
     if (error) {
-      // alert.error(error);
       dispatch(clearErrors());
     }
-
     dispatch(getOrderDetails(params.id));
-  }, [dispatch,  error, params.id]);
+  }, [dispatch, error, params.id]);
+
   return (
     <Fragment>
       {loading ? (
@@ -30,24 +27,24 @@ const OrderDetails = () => {
       ) : (
         <Fragment>
           <MetaData title="Order Details" />
-          <div className="orderDetailsPage">
-            <div className="orderDetailsContainer">
-              <Typography component="h1">
-                Order #{order && order._id}
-              </Typography>
-              <Typography>Shipping Info</Typography>
-              <div className="orderDetailsContainerBox">
-                <div>
+          <div className="min-h-[80vh]">
+            <div className="p-5">
+              <p className="md:flex md:justify-center md:items-center">
+                Order : #{order && order._id}
+              </p>
+              <p className="text-center font-semibold text-xl underline">Shipping Info</p>
+              <div className="my-5 md:flex md:flex-col md:justify-center md:items-center">
+                <div className="flex space-x-3">
                   <p>Name:</p>
                   <span>{order.user && order.user.name}</span>
                 </div>
-                <div>
+                <div className="flex space-x-3">
                   <p>Phone:</p>
                   <span>
                     {order.shippingInfo && order.shippingInfo.phoneNo}
                   </span>
                 </div>
-                <div>
+                <div className="flex space-x-3">
                   <p>Address:</p>
                   <span>
                     {order.shippingInfo &&
@@ -55,32 +52,32 @@ const OrderDetails = () => {
                   </span>
                 </div>
               </div>
-              <Typography>Payment</Typography>
-              <div className="orderDetailsContainerBox">
+              <p className="text-center font-semibold text-xl underline">Payment</p>
+              <div className="my-5 md:flex md:flex-col md:justify-center md:items-center">
                 <div>
                   <p
                     className={
                       order.paymentInfo &&
-                      order.paymentInfo.status === "succeeded"
+                        order.paymentInfo.status === "succeeded"
                         ? "greenColor"
                         : "redColor"
                     }
                   >
                     {order.paymentInfo &&
-                    order.paymentInfo.status === "succeeded"
+                      order.paymentInfo.status === "succeeded"
                       ? "PAID"
                       : "NOT PAID"}
                   </p>
                 </div>
 
-                <div>
+                <div className="flex space-x-3">
                   <p>Amount:</p>
                   <span>{order.totalPrice && order.totalPrice}</span>
                 </div>
               </div>
 
-              <Typography>Order Status</Typography>
-              <div className="orderDetailsContainerBox">
+              <p className="text-center font-semibold text-xl underline">Order Status</p>
+              <div className="my-3 md:flex md:flex-col md:justify-center md:items-center">
                 <div>
                   <p
                     className={
@@ -95,17 +92,21 @@ const OrderDetails = () => {
               </div>
             </div>
 
-            <div className="orderDetailsCartItems">
-              <Typography>Order Items:</Typography>
-              <div className="orderDetailsCartItemsContainer">
+            <div className="p-5">
+              <p className="text-center font-semibold text-xl underline">Order Items:</p>
+              <div className="my-3 md:flex md:flex-col md:justify-center md:items-center">
                 {order.orderItems &&
                   order.orderItems.map((item) => (
                     <div key={item.product}>
-                      <img src={item.image} alt="Product" />
-                      <Link to={`/product/${item.product}`}>
-                        {item.name}
-                      </Link>{" "}
-                      <span>
+                      <div className="flex items-center space-x-3">
+                        <img className="h-[60px]" src={item.image} alt="Product" />
+                        <div>
+                          <Link to={`/product/${item.product}`}>
+                            {item.name}
+                          </Link>{" "}
+                        </div>
+                      </div>
+                      <span className="text-center flex items-center justify-center">
                         {item.quantity} X ₹{item.price} ={" "}
                         <b>₹{item.price * item.quantity}</b>
                       </span>

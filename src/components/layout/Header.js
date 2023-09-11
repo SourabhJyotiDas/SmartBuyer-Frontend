@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BiLogIn } from "react-icons/bi";
 import { CgMenuMotion } from "react-icons/cg";
 import { AiOutlineAppstoreAdd, AiOutlineClose, AiOutlineHome, AiOutlineMessage, AiOutlineSearch, AiOutlineShoppingCart } from "react-icons/ai";
@@ -33,14 +33,14 @@ export default function Header() {
 
 
                               <div className='list-none space-x-4 hidden md:block'>
-                                    <Link className={`${location.pathname === "/" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/"}>Home</Link>
-                                    <Link className={`${location.pathname === "/products" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/products"}>Products</Link>
-                                    <Link className={`${location.pathname === "/contact" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/contact"}>Contact</Link>
-                                    <Link className={`${location.pathname === "/cart" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/cart"}>Cart</Link>
+                                    <Link className={`${location.pathname === "/" ? "underline text-white cursor-pointer" : "cursor-pointer md:text-white"}`} to={"/"}>Home</Link>
+                                    <Link className={`${location.pathname === "/products" ? "underline text-white cursor-pointer" : "cursor-pointer md:text-white"}`} to={"/products"}>Products</Link>
+                                    <Link className={`${location.pathname === "/contact" ? "underline text-white cursor-pointer" : "cursor-pointer md:text-white"}`} to={"/contact"}>Contact</Link>
+                                    <Link className={`${location.pathname === "/cart" ? "underline text-white cursor-pointer" : "cursor-pointer md:text-white"}`} to={"/cart"}>Cart</Link>
                               </div>
                               <div className=' items-center space-x-4 hidden  md:flex'>
-                                    <Link className={`${location.pathname === "/search" ? "text-white cursor-pointer" : "cursor-pointer"}`} to={"/search"}>Search</Link>
-                                    <Link className={`${location.pathname === "/login" ? "text-white cursor-pointer text-2xl" : "cursor-pointer text-2xl"}`} to={"/login"}><BiLogIn /></Link>
+                                    <Link className={`${location.pathname === "/search" ? "underline text-white cursor-pointer" : "cursor-pointer md:text-white"}`} to={"/search"}>Search</Link>
+                                    <Link className={`${location.pathname === "/login" ? "underline text-white cursor-pointer text-2xl" : "cursor-pointer text-2xl"}`} to={"/login"}><BiLogIn /></Link>
                               </div>
                         </nav>
                         <div id='mobileList' className='hidden'>
