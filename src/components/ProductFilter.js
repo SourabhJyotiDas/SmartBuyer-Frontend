@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-import Slider from "@material-ui/core/Slider"
 import { useNavigate } from 'react-router-dom';
 import { Rating } from "@material-ui/lab";
-import { VscEyeClosed } from "react-icons/vsc"
 import { BiArrowBack } from 'react-icons/bi';
 
 

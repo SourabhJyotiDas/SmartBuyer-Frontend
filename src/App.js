@@ -26,8 +26,6 @@ import Payment from "./components/cart/Payment.js";
 import OrderSuccess from "./components/cart/OrderSuccess.js";
 import MyOrders from "./components/Order/MyOrders.js";
 import OrderDetails from "./components/Order/OrderDetails.js";
-import { useState } from 'react';
-import axios from 'axios';
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { ToastContainer } from 'react-toastify';

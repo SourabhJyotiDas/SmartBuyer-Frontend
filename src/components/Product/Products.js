@@ -15,7 +15,7 @@ import { RiEqualizerLine } from 'react-icons/ri';
 export default function Products() {
 
    const dispatch = useDispatch()
-   const { loading, error, products, productCount, resultPerPage, filterProductsCount } = useSelector(state => state.products)
+   const { loading, error, products, productCount, resultPerPage } = useSelector(state => state.products)
 
    const params = useParams()
    // console.log(params);
