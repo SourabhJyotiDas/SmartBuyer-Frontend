@@ -12,7 +12,7 @@ import Login from "./components/User/Login.js"
 import Signup from "./components/User/Signup.js"
 import store from "./store.js"
 import { loadUser } from './actions/userActions';
-import {  useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import UserOptions from "./components/layout/UserOptions.js"
 import Profile from "./components/User/Profile.js"
 import UpdateProfile from "./components/User/UpdateProfile.js"
@@ -43,12 +43,7 @@ import Contact from './components/layout/Contact/Contact';
 
 
 function App() {
-  // const [stripeApiKey, setStripeApiKey] = useState("");
-const stripeApiKey = "pk_test_51MZuqaSCbCK97gg6HMnkrJ8P0pQIgeIvQYJTcTn4DQaNMOr83XPKYNgDtU42wFU7npC8kKuR9Yf4HNCu5WdobJSF00tcRU9E2L"
-  // async function getStripeApiKey() {
-  //   const { data } = await axios.get(`/api/v1/stripeapikey`);
-  //   setStripeApiKey(data.stripeApiKey);
-  // }
+  const stripeApiKey = "pk_test_51MZuqaSCbCK97gg6HMnkrJ8P0pQIgeIvQYJTcTn4DQaNMOr83XPKYNgDtU42wFU7npC8kKuR9Yf4HNCu5WdobJSF00tcRU9E2L"
 
   const { isAuthenticated, user } = useSelector(state => state.user)
 
@@ -58,7 +53,6 @@ const stripeApiKey = "pk_test_51MZuqaSCbCK97gg6HMnkrJ8P0pQIgeIvQYJTcTn4DQaNMOr83
         families: ["Open Sans", "Unbounded",]
       }
     })
-    // getStripeApiKey()
     store.dispatch(loadUser())
   }, [])
 
