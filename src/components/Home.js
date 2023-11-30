@@ -14,8 +14,6 @@ export default function Home() {
       const dispatch = useDispatch()
       const { loading, error, products } = useSelector(state => state.products)
 
-      // console.log(products)
-
       useEffect(() => {
             window.scroll(0, 0)
             if (error) {

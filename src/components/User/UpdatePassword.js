@@ -36,9 +36,7 @@ export default function UpdatePassword() {
 
    useEffect(() => {
       if (error) {
-         //   alert.error(error);
          dispatch(clearErrors());
-         // console.log(error)
       }
 
       if (isUpdated) {

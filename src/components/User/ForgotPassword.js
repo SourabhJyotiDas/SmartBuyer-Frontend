@@ -29,7 +29,6 @@ const ForgotPassword = () => {
       }
       if (message) {
          // alert.success(message);
-         // console.log("successfully sent")
       }
    }, [dispatch, error, message]);
 

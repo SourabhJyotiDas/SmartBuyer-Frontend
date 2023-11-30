@@ -15,7 +15,7 @@ export default function Product({ product }) {
                   <Link className='hover:scale-105 hover:shadow-2xl shadow-xl ease-in-out duration-300 rounded-lg p-2 m-3' to={`/product/${product._id}`}>
                         <div className="md:h-[100%] md:w-[25vw] lg:w-[18vw] p-5">
                               <div className="flex flex-col">
-                                    <img className="h-auto" src={product.images[0].url} alt="content" />
+                                    <img className="h-auto md:h-[30vh] " src={product.images[0].url} alt="content" />
                                     <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">{product.category}</h3>
                                     <h2 className="font-bold  ">{product.name}</h2>
                                     <p className="leading-relaxed text-sm">{`${product.description.slice(0,55)}...`}</p>

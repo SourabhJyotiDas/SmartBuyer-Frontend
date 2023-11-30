@@ -13,6 +13,7 @@ import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { useNavigate } from "react-router-dom";
 import { clearErrors,createOrder } from "../../actions/orderAction";
 import { toast } from "react-toastify";
+import { server } from "../../store";
 
 const Payment = () => {
 
@@ -49,8 +50,8 @@ const Payment = () => {
       payBtn.current.disabled = true;
 
       try {
-         const config = { headers: { "Content-Type": "application/json", }, };
-         const { data } = await axios.post(`/api/v1/payment/process`, paymentData, config);
+         const config = { headers: { "Content-Type": "application/json" }, withCredentials: true };
+         const { data } = await axios.post(`${server}/payment/process`, paymentData, config);
 
          const client_secret = data.client_secret;
 

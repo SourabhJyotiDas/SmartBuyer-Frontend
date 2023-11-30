@@ -18,7 +18,6 @@ export default function Products() {
    const { loading, error, products, productCount, resultPerPage } = useSelector(state => state.products)
 
    const params = useParams()
-   // console.log(params);
    const keyword = params.keyword;
 
    const [currentPage, setCurrentPage] = useState(1)
@@ -45,7 +44,6 @@ export default function Products() {
       if (error) {
          // return alert.error(error)
          dispatch(clearErrors)
-         // console.log(error)
       }
       dispatch(getAllproduct(keyword, currentPage, price, category, ratings))
       // eslint-disable-next-line
@@ -80,8 +78,8 @@ border-2 border-gray-300'>
                </div>
 
                {/* For Pc */}
-                <div id='allProducts' className=''>
-                <div className='flex'>
+               <div id='allProducts' className=''>
+                  <div className='flex'>
                      <div className='w-[30%] h-full hidden md:block sticky top-10 bottom-0 py-10 bg-white'>
                         <ProductFilter category={category} setCategory={setCategory} priceHandler={priceHandler} ratings={ratings} setRatings={setRatings} />
                      </div>
@@ -116,7 +114,7 @@ border-2 border-gray-300'>
                         }
                      </section>
                   </div>
-                </div>
+               </div>
 
 
             </div>

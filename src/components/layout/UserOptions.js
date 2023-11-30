@@ -15,7 +15,6 @@ import { toast } from 'react-toastify';
 export default function UserOptions({ user }) {
    const dispatch = useDispatch()
    const navigate = useNavigate()
-   // console.log(user.avatar.url)
    const [open, setOpen] = useState(false)
 
    const { cartItems } = useSelector((state) => state.cart)

@@ -44,3 +44,5 @@ const middleware = [thunk]
 const store = createStore(reducer, initialState, composeWithDevTools(applyMiddleware(...middleware)))
 
 export default store;
+
+export const server = "https://smartbuyer.vercel.app/api/v1"

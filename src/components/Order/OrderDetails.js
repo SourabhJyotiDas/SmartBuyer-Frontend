@@ -11,8 +11,6 @@ const OrderDetails = () => {
 
   const dispatch = useDispatch();
 
-  console.log(order);
-
   useEffect(() => {
     if (error) {
       dispatch(clearErrors());

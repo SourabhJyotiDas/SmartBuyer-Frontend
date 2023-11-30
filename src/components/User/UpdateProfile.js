@@ -29,7 +29,6 @@ export default function UpdateProfile() {
       myForm.set("email", email)
       myForm.set("avatar", avatar)
       dispatch(updateProfile(myForm))
-      // console.log("Register submited successfully")
    }
 
    const updateProfileDataChange = (e) => {
@@ -46,7 +45,6 @@ export default function UpdateProfile() {
    useEffect(() => {
       if (error) {
          dispatch(clearErrors())
-         // console.log("Error")
       }
       if (user) {
          setName(user.name)

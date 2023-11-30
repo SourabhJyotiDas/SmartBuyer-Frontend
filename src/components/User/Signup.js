@@ -82,7 +82,6 @@ export default function Signup() {
    useEffect(() => {
 
       if (error) {
-         // console.log(error);
          toast.error(error, {
             position: "top-center",
             autoClose: 4000,

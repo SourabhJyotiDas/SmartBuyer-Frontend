@@ -18,8 +18,6 @@ const UpdateProduct = () => {
    const navigate = useNavigate();
    const params = useParams();
 
-   // console.log(params.id)
-
    const { error, product } = useSelector((state) => state.productDetails);
 
    const {

@@ -16,8 +16,6 @@ import Metadata from "../layout/Metadata";
 import { toast } from "react-toastify";
 
 
-
-
 const Shipping = () => {
    const navigate = useNavigate()
    const dispatch = useDispatch();
@@ -35,7 +33,16 @@ const Shipping = () => {
       e.preventDefault();
 
       if (phoneNo.length < 10 || phoneNo.length > 10) {
-         // alert.error("Phone Number should be 10 digits Long");
+         toast.error("Phone Number should be 10 digits Long", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+         });
          return;
       }
       dispatch(
@@ -50,7 +57,7 @@ const Shipping = () => {
          draggable: true,
          progress: undefined,
          theme: "colored",
-         });
+      });
       navigate("/order/confirm");
    };
 
